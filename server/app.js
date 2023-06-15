@@ -12,7 +12,7 @@ const logger = require('morgan');
 
 //routes
 const userRoutes = require('./routers/userRoutes');
-// const vendorRoutes = require('./routers/vendorRoutes.js');
+const vendorRoutes = require('./routers/vendorRoutes');
 // const adminRoutes = require('./routers/adminRoutes.js');
 
 
@@ -33,7 +33,7 @@ db();
 //     
 app.use('/',userRoutes)
 // app.use('/admin',adminRoutes)
-// app.use('/vendor',vendorRoutes)
+app.use('/vendor',vendorRoutes)
 
 
 //serverPort

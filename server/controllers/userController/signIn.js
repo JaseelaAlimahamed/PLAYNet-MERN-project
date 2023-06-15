@@ -67,6 +67,7 @@ module.exports = {
     },
     userSignin: async (req, res) => {
         const { mobile, password } = req.body
+        console.log(mobile);
         if (!mobile || !password) return res.status(400).json({ 'message': 'mobile number and password required.' });
         else {
             const foundUser = await users.findOne({ mobile })
