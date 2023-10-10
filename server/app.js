@@ -1,7 +1,5 @@
 const express = require('express');
 const app = express();
-
-const mongoose = require('mongoose');
 const cors = require('cors')
 // require('dotenv/config');
 const PORT = 3001 || 5000;
@@ -13,7 +11,7 @@ const logger = require('morgan');
 //routes
 const userRoutes = require('./routers/userRoutes');
 const vendorRoutes = require('./routers/vendorRoutes');
-// const adminRoutes = require('./routers/adminRoutes.js');
+const adminRoutes = require('./routers/adminRoutes.js');
 
 
 
@@ -32,7 +30,7 @@ db();
 
 //     
 app.use('/',userRoutes)
-// app.use('/admin',adminRoutes)
+app.use('/admin',adminRoutes)
 app.use('/vendor',vendorRoutes)
 
 
